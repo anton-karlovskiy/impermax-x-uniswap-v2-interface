@@ -11,7 +11,7 @@ const IMPERMAX_SUBGRAPH_URLS: {
 const IMX_STAKING_SUBGRAPH_URLS: {
   [chainId: number]: string;
 } = {
-  [CHAIN_IDS.ARBITRUM]: 'https://api.thegraph.com/subgraphs/name/impermax-finance/ibex-staking'
+  [CHAIN_IDS.ARBITRUM]: 'https://api.studio.thegraph.com/query/46041/ibex-staking/v0.0.1'
 };
 
 const UNISWAP_SUBGRAPH_URL = 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2';
