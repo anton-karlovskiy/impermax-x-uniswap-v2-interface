@@ -219,11 +219,11 @@ const StakingForm = (props: React.ComponentPropsWithRef<'form'>): JSX.Element =>
 
   const addTransaction = useTransactionAdder();
 
-  const onApprove = async (data: StakingFormData) => {
+  const onApprove = (data: StakingFormData) => {
     approveMutation.mutate(data[STAKING_AMOUNT]);
   };
 
-  const onStake = async (data: StakingFormData) => {
+  const onStake = (data: StakingFormData) => {
     stakeMutation.mutate(data[STAKING_AMOUNT]);
   };
 
@@ -253,7 +253,6 @@ const StakingForm = (props: React.ComponentPropsWithRef<'form'>): JSX.Element =>
 
   let approved: boolean | undefined;
   let floatIMXBalance: number | undefined;
-  let floatIMXAllowance: number | undefined;
   let submitButtonText: string | undefined;
   if (imxBalanceSuccess && imxAllowanceSuccess) {
     if (imxBalance === undefined) {
@@ -266,7 +265,6 @@ const StakingForm = (props: React.ComponentPropsWithRef<'form'>): JSX.Element =>
     approved = imxAllowance.gt(Zero);
     submitButtonText = approved ? 'Stake' : 'Approve';
     floatIMXBalance = formatNumberWithFixedDecimals(2)(parseFloat(formatUnits(imxBalance, IMX_DECIMALS)));
-    floatIMXAllowance = formatNumberWithFixedDecimals(2)(parseFloat(formatUnits(imxAllowance, IMX_DECIMALS)));
   }
   if (imxBalanceIdle || imxBalanceLoading || imxAllowanceIdle || imxAllowanceLoading) {
     submitButtonText = 'Loading...';
@@ -303,7 +301,6 @@ const StakingForm = (props: React.ComponentPropsWithRef<'form'>): JSX.Element =>
           })}
           inputMaxValue={inputMaxValue}
           balance={floatIMXBalance}
-          allowance={floatIMXAllowance}
           error={!!errors[STAKING_AMOUNT]}
           helperText={errors[STAKING_AMOUNT]?.message}
           tokenSymbol='IMX'

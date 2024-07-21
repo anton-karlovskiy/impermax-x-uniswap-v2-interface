@@ -13,3 +13,16 @@ $ yarn install # install dependencies
 $ yarn start # serve with hot reload at localhost:3000
 $ yarn build # build for production
 ```
+<!-- ray test touch <<< -->
+getTotalBalance
+getPoolTokenCache
+getContracts
+getExchangeRate
+getBorrowed
+getLendingPoolData
+
+getLendingPoolCache
+getContracts
+normalize
+initializeBorrowed
+<!-- ray test touch >>> -->

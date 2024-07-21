@@ -9,7 +9,6 @@ import formatNumberWithComma from 'utils/helpers/format-number-with-comma';
 interface CustomProps {
   inputMaxValue: () => void;
   balance: number | undefined;
-  allowance: number | undefined;
   error?: boolean;
   helperText?: React.ReactNode | string;
   tokenSymbol: string;

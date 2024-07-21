@@ -1,6 +1,4 @@
 
-import * as React from 'react';
-
 import ImpermaxImage, { Props as ImpermaxImageProps } from 'components/UI/ImpermaxImage';
 
 interface CustomProps {
